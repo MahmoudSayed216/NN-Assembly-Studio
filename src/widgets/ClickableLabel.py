@@ -1,7 +1,5 @@
 import tkinter as tk
 
-import tkinter as tk
-
 class ClickableLabel(tk.Label):
     def __init__(self, parent, x, y, text, bg=None, fg=None, font=None, command=None):
         super().__init__(parent, text=text, bg=bg, fg=fg, font=font, cursor="hand2")
