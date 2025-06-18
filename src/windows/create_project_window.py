@@ -18,6 +18,8 @@ class CreateProjectWindow:
         self.create_buttons()
         self.create_labels()
         self.create_text_boxes()
+
+        
     def trash(self):
             print(self.model_text_box.get())
 
