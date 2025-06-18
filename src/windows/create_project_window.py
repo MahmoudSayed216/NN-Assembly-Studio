@@ -10,7 +10,6 @@ class CreateProjectWindow:
         self.VERTICAL_WALL = 100
         self.VERTICAL_SEP = 50
 
-
         self.root = root
         self.window = tk.Toplevel(root)
         self.window.title("New Project")

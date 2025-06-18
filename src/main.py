@@ -1,3 +1,5 @@
-from windows.start_window import root
+from windows.start_window import StartWindow
 
-root.mainloop()
+start_window = StartWindow()
+
+start_window.mainloop()
