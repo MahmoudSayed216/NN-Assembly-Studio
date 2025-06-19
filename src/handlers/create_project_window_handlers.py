@@ -1,14 +1,17 @@
 from tkinter import filedialog as fd
 import tkinter as tk
 from models.Project import Project
+from windows.work_window import WorkWindow
 
-def create_project(model_name_tvar, path_tvar):
-    print(model_name_tvar.get())
-    print(path_tvar.get())
+
+def create_project(master_of_master, master, model_name_tvar, path_tvar):
+    master_of_master.withdraw()
+    master.withdraw()
     model_name = model_name_tvar.get()
     path = path_tvar.get()
     project = Project(model_name, path)
-    print(project)
+    WorkWindow(master, project)
+
 
 
 def browse(parent, path_tbox: tk.Entry):

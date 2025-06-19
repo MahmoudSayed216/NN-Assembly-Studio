@@ -3,7 +3,7 @@ import tkinter as tk
 class ZoomDragCanvas(tk.Canvas):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
-
+        
         # Zoom and drag parameters
         self.scale_factor = 1.0
         self.min_scale = 0.2
@@ -36,7 +36,7 @@ class ZoomDragCanvas(tk.Canvas):
                                   tags=("movable", group_id))
             self.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=f"Box {i+1}", font=("Arial", 12, "bold"),
                              tags=("movable", group_id))
-
+            
     def add_box(self):
         x0, y0 = 300, 300
         x1, y1 = x0 + 100, y0 + 50

@@ -29,7 +29,7 @@ class CreateProjectWindow:
 
 
     def create_buttons(self) -> None:
-        create_button = tk.Button(self.window, text="Create",command=lambda: create_project(self.model_name_tvar, self.path_tvar))
+        create_button = tk.Button(self.window, text="Create",command=lambda: create_project(self.root, self.window, self.model_name_tvar, self.path_tvar))
         create_button.place(x=670, y=420)
 
         browse_button = tk.Button(self.window, text="Browse", command=lambda: browse(self.window, self.path_text_box))

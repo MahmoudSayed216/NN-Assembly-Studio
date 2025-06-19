@@ -1,5 +1,5 @@
 from datetime import datetime
-from models import CanvasData
+from models.CanvasData import CanvasData
 
 
 class Project:
