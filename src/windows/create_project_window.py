@@ -1,6 +1,10 @@
 import tkinter as tk
 from resources.colors import *
 from resources.fonts import *
+from handlers.create_project_window_handlers import *
+
+
+
 class CreateProjectWindow:
 
 
@@ -14,19 +18,22 @@ class CreateProjectWindow:
         self.window = tk.Toplevel(root)
         self.window.title("New Project")
         self.window.geometry("800x500")
-        self.create_buttons()
         self.create_labels()
+        self.create_vars()
         self.create_text_boxes()
+        self.create_buttons()
 
         
     def trash(self):
             print(self.model_text_box.get())
 
 
-    def create_buttons(self):
-        button = tk.Button(self.window, text="Create",command=lambda: self.trash())
-        button.place(x=670, y=420)
+    def create_buttons(self) -> None:
+        create_button = tk.Button(self.window, text="Create",command=lambda: create_project(self.model_name_tvar, self.path_tvar))
+        create_button.place(x=670, y=420)
 
+        browse_button = tk.Button(self.window, text="Browse", command=lambda: browse(self.window, self.path_text_box))
+        browse_button.place(x=580, y=self.HORIZONTAL_WALL+self.VERTICAL_SEP-5)
 
     def create_labels(self):
         self.model_name_lbl = tk.Label(self.window, text="Model name", fg= SKYBLUE, font=D12)
@@ -37,8 +44,12 @@ class CreateProjectWindow:
 
 
     def create_text_boxes(self):
-         self.model_text_box = tk.Entry(self.window,width=50)
+         self.model_text_box = tk.Entry(self.window,width=50, textvariable=self.model_name_tvar)
          self.model_text_box.place(x=self.VERTICAL_WALL+100, y=self.HORIZONTAL_WALL)
 
-         self.path_text_box = tk.Entry(self.window, width=50, textvariable=tk.StringVar(value="JONG DONG"))
+         self.path_text_box = tk.Entry(self.window, width=50, textvariable=self.path_tvar)
          self.path_text_box.place(x=self.VERTICAL_WALL+100, y=self.HORIZONTAL_WALL+self.VERTICAL_SEP)
+
+    def create_vars(self):
+         self.path_tvar = tk.StringVar()
+         self.model_name_tvar = tk.StringVar()
