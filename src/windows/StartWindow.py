@@ -8,12 +8,10 @@ from handlers import StartWindowHandlers
 
 
 
-
 class StartWindow:
 
 
     def __init__(self):
-        
         self.root = tk.Tk()
         self.root.title("NASM Main Menu")
         self.root.geometry("1920x1080")

@@ -1,14 +1,6 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
-
 gp.py
 .Python
-
-
-
 .pytest_cache/
 .ipynb_checkpoints
-
 .vscode/
