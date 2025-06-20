@@ -1,5 +1,6 @@
 import tkinter as tk
-
+from resources.fonts import *
+from resources.colors import *
 
 
 class ModulesBar(tk.Frame):
@@ -8,5 +9,9 @@ class ModulesBar(tk.Frame):
         super().__init__(master, cnf, background=background, bd=bd, bg=bg, border=border, borderwidth=borderwidth, class_=class_, colormap=colormap, container=container, cursor=cursor, height=height, highlightbackground=highlightbackground, highlightcolor=highlightcolor, highlightthickness=highlightthickness, name=name, padx=padx, pady=pady, relief=relief, takefocus=takefocus, visual=visual, width=width)
         self.place(x=x, y=y)
 
+
+
+        self.top_label = tk.Label(self, text="Modules", bg=bg, font=A12B, fg=BLACK)
+        self.top_label.place(relx=0.5, y=10, anchor='n')
 
         

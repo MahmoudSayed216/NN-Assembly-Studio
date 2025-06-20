@@ -51,5 +51,5 @@ class CreateProjectWindow:
          self.path_text_box.place(x=self.VERTICAL_WALL+100, y=self.HORIZONTAL_WALL+self.VERTICAL_SEP)
 
     def create_vars(self):
-         self.path_tvar = tk.StringVar()
-         self.model_name_tvar = tk.StringVar()
+         self.path_tvar = tk.StringVar(value="path/to/project")
+         self.model_name_tvar = tk.StringVar(value="ResNet50")
