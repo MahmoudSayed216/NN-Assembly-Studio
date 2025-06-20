@@ -3,7 +3,7 @@ from resources.fonts import *
 from resources.colors import *
 from PIL import Image, ImageTk
 from widgets.ClickableLabel import ClickableLabel
-from handlers import start_window_handlers
+from handlers import StartWindowHandlers
 
 
 
@@ -25,19 +25,19 @@ class StartWindow:
         self.load_images()
 
     def create_clickable_labels(self):
-        create_proj = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL, text="Create project", fg=SKYBLUE, font=A15BU, command=lambda event: start_window_handlers.create_project(self.root))
+        create_proj = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL, text="Create project", fg=SKYBLUE, font=A15BU, command=lambda event: StartWindowHandlers.create_project(self.root))
         create_proj.set_onhover_color(LIGHTYELLOW)
 
-        load_proj = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP, text="Load project", fg=SKYBLUE, font=A15BU, command=lambda event: start_window_handlers.load_project())
+        load_proj = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP, text="Load project", fg=SKYBLUE, font=A15BU, command=lambda event: StartWindowHandlers.load_project())
         load_proj.set_onhover_color(LIGHTYELLOW)
 
-        create_mod = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP * 2, text="Create module", fg=SKYBLUE, font=A15BU, command=lambda event: start_window_handlers.create_module())
+        create_mod = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP * 2, text="Create module", fg=SKYBLUE, font=A15BU, command=lambda event: StartWindowHandlers.create_module())
         create_mod.set_onhover_color(LIGHTYELLOW)
 
-        settings_ = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP * 3, text="Settings", fg=SKYBLUE, font=A15BU, command=lambda event: start_window_handlers.goto_settings())
+        settings_ = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP * 3, text="Settings", fg=SKYBLUE, font=A15BU, command=lambda event: StartWindowHandlers.goto_settings())
         settings_.set_onhover_color(LIGHTYELLOW)
 
-        exit_ = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP * 4, text="Exit", fg=SKYBLUE, font=A15BU, command=lambda event: start_window_handlers.exit_app())
+        exit_ = ClickableLabel(self.root, self.VERTICAL_WALL, self.HORIZONTAL_WALL + self.VERTICAL_SEP * 4, text="Exit", fg=SKYBLUE, font=A15BU, command=lambda event: StartWindowHandlers.exit_app())
         exit_.set_onhover_color(LIGHTYELLOW)
 
     def load_images(self):

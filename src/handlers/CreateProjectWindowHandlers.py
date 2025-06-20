@@ -3,7 +3,7 @@ from tkinter import messagebox
 import tkinter as tk
 
 from models.Project import Project
-from windows.work_window import WorkWindow
+from windows.WorkWindow import WorkWindow
 
 
 def create_project(master_of_master, master, model_name_tvar, path_tvar):

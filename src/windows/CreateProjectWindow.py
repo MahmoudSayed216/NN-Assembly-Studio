@@ -1,7 +1,7 @@
 import tkinter as tk
 from resources.colors import *
 from resources.fonts import *
-from handlers.create_project_window_handlers import *
+from handlers.CreateProjectWindowHandlers import *
 
 
 

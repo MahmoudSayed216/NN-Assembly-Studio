@@ -1,4 +1,4 @@
-from windows.start_window import StartWindow
+from windows.StartWindow import StartWindow
 
 start_window = StartWindow()
 

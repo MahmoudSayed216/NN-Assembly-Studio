@@ -1,4 +1,4 @@
-from windows.create_project_window import CreateProjectWindow
+from windows.CreateProjectWindow import CreateProjectWindow
 
 def create_project(root):
     CreateProjectWindow(root)

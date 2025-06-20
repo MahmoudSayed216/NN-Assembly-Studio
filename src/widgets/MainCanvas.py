@@ -19,7 +19,7 @@ class MainCanvas(tk.Canvas):
     def create_buttons(self):
         BUTTONS_SEP_Y = 0.04
         BUTTONS_VERTICAL_WALL = 0.95
-        BUTTONS_HORIZONTAL_BASE = 0.03
+        BUTTONS_HORIZONTAL_BASE = 0.82
         self.home_btn = tk.Button(self, text="H", font=A15B)
         self.home_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=BUTTONS_HORIZONTAL_BASE)
         
