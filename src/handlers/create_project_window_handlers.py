@@ -10,7 +10,7 @@ def create_project(master_of_master, master, model_name_tvar, path_tvar):
     model_name = model_name_tvar.get()
     path = path_tvar.get()
     project = Project(model_name, path)
-    WorkWindow(master, project)
+    WorkWindow(master_of_master, project)
 
 
 

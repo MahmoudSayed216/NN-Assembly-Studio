@@ -1,3 +1,6 @@
 SKYBLUE = "#004D96"
 LIGHTYELLOW = "#fff1cd"
 WHITE = "#ffffff"
+LIGHTGRAY = "#eeeeee"
+DARKGRAY = "#777777"
+MIDGRAY = "#cccccc"

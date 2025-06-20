@@ -19,7 +19,7 @@ class StartWindow:
         self.root.geometry("1920x1080")
         self.root.configure(bg=WHITE)
         self.HORIZONTAL_WALL = 140
-        self.VERTICAL_WALL = 150
+        self.VERTICAL_WALL = 100
         self.VERTICAL_SEP = 70
         self.create_clickable_labels()
         self.load_images()
