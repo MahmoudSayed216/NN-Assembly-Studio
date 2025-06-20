@@ -19,7 +19,7 @@ class WorkWindow:
         self.MENUBAR_HEIGHT = self.menu_bar.winfo_height()
         self.MENUBAR_x = 0
         self.MENUBAR_y = 0
-        self.MODULE_BAR_WIDTH = 200
+        self.MODULE_BAR_WIDTH = 250
         self.MODULE_BAR_HEIGHT = 1080
         self.MODULE_BAR_X = 0
         self.MODULE_BAR_Y = self.MENUBAR_HEIGHT

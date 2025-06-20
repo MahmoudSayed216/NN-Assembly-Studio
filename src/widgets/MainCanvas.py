@@ -19,13 +19,13 @@ class MainCanvas(tk.Canvas):
     def create_buttons(self):
         BUTTONS_SEP_Y = 0.04
         BUTTONS_VERTICAL_WALL = 0.95
-        
+        BUTTONS_HORIZONTAL_BASE = 0.03
         self.home_btn = tk.Button(self, text="H", font=A15B)
-        self.home_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=0.03)
+        self.home_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=BUTTONS_HORIZONTAL_BASE)
         
         self.zoom_in_btn = tk.Button(self, text="+", font=A15B)
-        self.zoom_in_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=0.03+BUTTONS_SEP_Y)
+        self.zoom_in_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=BUTTONS_HORIZONTAL_BASE+BUTTONS_SEP_Y*1)
         
         self.zoom_out_btn = tk.Button(self, text="-", font=A15B)
-        self.zoom_out_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=0.03+BUTTONS_SEP_Y*2)
+        self.zoom_out_btn.place(relx=BUTTONS_VERTICAL_WALL, rely=BUTTONS_HORIZONTAL_BASE+BUTTONS_SEP_Y*2)
         
