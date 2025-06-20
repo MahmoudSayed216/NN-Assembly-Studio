@@ -1,7 +1,6 @@
 import tkinter as tk
 from resources.colors import *
 from widgets.MainCanvas import MainCanvas
-# from widgets.MenuBar import MenuBar
 from widgets.ModulesBar import ModulesBar
 
 class WorkWindow:

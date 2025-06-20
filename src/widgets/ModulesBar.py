@@ -13,7 +13,6 @@ class ModulesBar(tk.Frame):
         self.pack(side=tk.LEFT, fill=tk.BOTH)
         
         self.configure(width=width, height=height)
-        print("height", height)
 
         self.top_label = tk.Label(self, text="Modules", bg=bg, font=A12B, fg=BLACK)
         self.top_label.pack(pady=5)

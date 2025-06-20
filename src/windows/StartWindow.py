@@ -7,7 +7,6 @@ from handlers import StartWindowHandlers
 
 
 
-
 class StartWindow:
 
 

@@ -1,7 +1,4 @@
 import tkinter as tk
-import customtkinter
-from widgets.ModuleContainer import ModuleContainer
-from models.ModuleData import ModuleData
 from resources.colors import *
 from widgets.ScrollableFrame import ScrollableFrame
 
