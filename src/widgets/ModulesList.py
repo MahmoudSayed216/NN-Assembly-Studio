@@ -3,6 +3,7 @@ import customtkinter
 from widgets.ModuleContainer import ModuleContainer
 from models.ModuleData import ModuleData
 from resources.colors import *
+from widgets.ScrollableFrame import ScrollableFrame
 
 
 class ModulesList(tk.Frame):
@@ -12,17 +13,6 @@ class ModulesList(tk.Frame):
             self.place(relx=relx, rely=rely, anchor='n')
         else:
             self.place(x=x, y=y)
-        scrollable_frame = customtkinter.CTkScrollableFrame(self, corner_radius=0, width=width, height=height)
-        scrollable_frame.place(relx=0.5, rely=0, anchor='n')
+        
 
-
-        mod1 = ModuleData("Conv2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/cnn.png")
-        mod2 = ModuleData("MLP", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/mlp.jpg")
-
-        # for mod in [mod1, mod2]:
-            # customtkinter.CTkButton(scrollable_frame, text="this is a button!!", corner_radius=0).pack(pady=15)
-            # print("loaded")
-            # ModuleContainer(scrollable_frame, bg=WHITE, width=130, height=130, module_data=mod)
-
-        for i in range(30):
-            ModuleContainer(scrollable_frame, bg=WHITE, width=130, height=130, module_data=mod1)
+        self.scrollable_frame = ScrollableFrame(self, [], width, height)

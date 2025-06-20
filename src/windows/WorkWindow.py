@@ -30,7 +30,7 @@ class WorkWindow:
 
         #main work window components
         self.main_canvas = MainCanvas(self.window, width=self.MAIN_CANVAS_WIDTH, height=self.MAIN_CANVAS_HEIGHT, x=self.MAIN_CANVAS_X, y=self.MAIN_CANVAS_Y, bg=WHITE)
-        self.modules_bar = ModulesBar(self.window, bg=LIGHTGRAY, width=self.MODULE_BAR_WIDTH, height=self.MODULE_BAR_HEIGHT, x=self.MODULE_BAR_X,y=self.MODULE_BAR_Y)
+        self.modules_bar = ModulesBar(self.window, bg=WHITE, width=self.MODULE_BAR_WIDTH, height=self.MODULE_BAR_HEIGHT)
 
         self.window.protocol("WM_DELETE_WINDOW", lambda: master.destroy())
 
