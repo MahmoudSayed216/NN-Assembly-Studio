@@ -9,7 +9,7 @@ class ModuleContainer:
         self.frame.pack(pady=10)
         self.module_data = module_data
         img = Image.open(module_data.img_path)
-        img = img.resize(size=(128, 128))
+        img = img.resize(size=(160, 160))
         photo = ImageTk.PhotoImage(img)
 
         img_container = tk.Label(self.frame, image=photo)
@@ -19,3 +19,9 @@ class ModuleContainer:
         self.frame.pack(pady=15)
 
         self.label = tk.Label(self.frame, text=module_data.module_name, bg=WHITE).pack()
+
+    def show(self, pack_info):
+        self.frame.pack(pack_info)
+
+    def hide(self):
+        self.frame.pack_forget()

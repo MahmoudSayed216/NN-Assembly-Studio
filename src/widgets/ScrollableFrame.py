@@ -1,6 +1,5 @@
 import tkinter as tk
 import customtkinter
-from models.ModuleData import ModuleData
 from widgets.ModuleContainer import ModuleContainer
 from resources.colors import *
 
@@ -14,14 +13,35 @@ class ScrollableFrame:
 		self.scrollable_frame.place(relx=0.5, rely=0, anchor='n')
 		self.scrollable_frame.bind("<Button-4>", self._on_mouse_wheel)
 		self.scrollable_frame.bind("<Button-5>", self._on_mouse_wheel)
-		
-		mod1 = ModuleData("Conv2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/cnn.png")
-		mod2 = ModuleData("MLP", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/mlp.jpg")
+		self.module_containers_refs = []
+		self.pack_infos = []		
+		for item in items:
+			ref1 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
+			self.module_containers_refs.append(ref1)
+			self.pack_infos.append(ref1.frame.pack_info())
+			
+			ref2 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
+			self.module_containers_refs.append(ref2)
+			self.pack_infos.append(ref2.frame.pack_info())
+
+			ref3 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
+			self.module_containers_refs.append(ref3)
+			self.pack_infos.append(ref3.frame.pack_info())
 
 
-		for i in range(10):
-			ModuleContainer(self.scrollable_frame, bg=WHITE, width=130, height=130, module_data=mod1)
-			ModuleContainer(self.scrollable_frame, bg=WHITE, width=130, height=130, module_data=mod2)
 	def _on_mouse_wheel(self, event):
 			direction = -1 if event.num == 4 else 1
 			self.scrollable_frame._parent_canvas.yview_scroll(direction, "units")
+
+	def hide_unhide_containers(self, search_text):
+		
+		if search_text == "":
+			for ref, pack_info in zip(self.module_containers_refs, self.pack_infos):
+				ref.show(pack_info)
+			return
+		
+		for ref, pack_info in zip(self.module_containers_refs, self.pack_infos):
+			if search_text.lower() in ref.module_data.module_name.lower():
+				ref.show(pack_info)
+			else:
+				ref.hide()

@@ -1,6 +1,8 @@
 import tkinter as tk
 from resources.colors import *
 from widgets.ScrollableFrame import ScrollableFrame
+from models.ModuleData import ModuleData
+
 
 
 class ModulesList(tk.Frame):
@@ -12,4 +14,17 @@ class ModulesList(tk.Frame):
             self.place(x=x, y=y)
         
 
-        self.scrollable_frame = ScrollableFrame(self, [], width, height)
+        self.module_containers_refs = []
+
+
+        mod1 = ModuleData("Conv2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/Conv2D.png")
+        mod2 = ModuleData("MaxPooling2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/MaxPooling2D.png")
+        mod3 = ModuleData("Linear", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/noname.png")
+
+        models = [mod1, mod2, mod3]
+
+
+        self.scrollable_frame = ScrollableFrame(self, models, width, height)
+
+    def reflect_on_list(self, search_txt):
+        self.scrollable_frame.hide_unhide_containers(search_txt)
