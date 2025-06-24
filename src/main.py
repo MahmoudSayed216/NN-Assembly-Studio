@@ -1,5 +1,15 @@
-from windows.StartWindow import StartWindow
+from App import NNAssemblyStudio
 
-start_window = StartWindow()
 
-start_window.mainloop()
+
+
+
+def main():
+    NNASM = NNAssemblyStudio()
+    NNASM.run()
+
+
+
+
+if __name__ == "__main__":
+    main()

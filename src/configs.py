@@ -1,0 +1,1 @@
+BASE_MODULES_PATH = "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/NNASM/modules"

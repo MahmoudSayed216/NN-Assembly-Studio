@@ -42,6 +42,8 @@ class CreateProjectWindow:
         self.path_lbl = tk.Label(self.window, text="path", fg= SKYBLUE, font=D12)
         self.path_lbl.place(x=self.VERTICAL_WALL, y=self.HORIZONTAL_WALL+self.VERTICAL_SEP)
 
+        self.load_all_mods_lbl = tk.Label(self.window, text="Load all Modules")
+
 
     def create_text_boxes(self):
          self.model_text_box = tk.Entry(self.window,width=50, textvariable=self.model_name_tvar)

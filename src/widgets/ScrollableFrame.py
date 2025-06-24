@@ -15,11 +15,14 @@ class ScrollableFrame:
 		self.scrollable_frame.bind("<Button-5>", self._on_mouse_wheel)
 		self.module_containers_refs = []
 		self.pack_infos = []		
-		for item in items:
+		self.list_items()
+
+	def list_items(self):
+		for item in self.items:
 			ref1 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
 			self.module_containers_refs.append(ref1)
 			self.pack_infos.append(ref1.frame.pack_info())
-			
+					
 			ref2 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
 			self.module_containers_refs.append(ref2)
 			self.pack_infos.append(ref2.frame.pack_info())

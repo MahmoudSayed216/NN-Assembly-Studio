@@ -2,7 +2,7 @@ import tkinter as tk
 from resources.colors import *
 from widgets.ScrollableFrame import ScrollableFrame
 from models.ModuleData import ModuleData
-
+import handlers.ModuleListHandlers as ModulesListHandlers
 
 
 class ModulesList(tk.Frame):
@@ -17,12 +17,7 @@ class ModulesList(tk.Frame):
         self.module_containers_refs = []
 
 
-        mod1 = ModuleData("Conv2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/Conv2D.png")
-        mod2 = ModuleData("MaxPooling2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/MaxPooling2D.png")
-        mod3 = ModuleData("Linear", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/noname.png")
-
-        models = [mod1, mod2, mod3]
-
+        models = ModulesListHandlers.get_all_built_in_modules()
 
         self.scrollable_frame = ScrollableFrame(self, models, width, height)
 
