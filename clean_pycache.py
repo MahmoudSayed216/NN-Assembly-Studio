@@ -5,18 +5,15 @@ import shutil
 target = sys.argv[1]
 
 
-folders = os.listdir(target)
+def clean_cache(target):
+    files = os.listdir(target)
+    for file in files:
+        full_path = os.path.join(target, file)
+        if file == "__pycache__":
+            shutil.rmtree(full_path)
+        elif os.path.isdir(full_path):
+            clean_cache(full_path)
 
-for folder in folders:
-    full_path = os.path.join(target, folder)
-    folders_ = []
-    if os.path.isdir(full_path):
-        folders_ = os.listdir(full_path)
- 
-    for folder_ in folders_:
-        if folder_ == "__pycache__":
+        
 
-            pcache_path = os.path.join(full_path, folder_)
-
-            shutil.rmtree(pcache_path)
-
+clean_cache(target)

@@ -23,10 +23,6 @@ class CreateProjectWindow:
         self.create_text_boxes()
         self.create_buttons()
 
-        
-    def trash(self):
-            print(self.model_text_box.get())
-
 
     def create_buttons(self) -> None:
         create_button = tk.Button(self.window, text="Create",command=lambda: create_project(self.root, self.window, self.model_name_tvar, self.path_tvar))

@@ -4,7 +4,7 @@ import tkinter as tk
 
 from models.Project import Project
 from windows.WorkWindow import WorkWindow
-
+from ServiceLocator import ServiceLocator
 
 def create_project(master_of_master, master, model_name_tvar, path_tvar):
 
@@ -17,8 +17,11 @@ def create_project(master_of_master, master, model_name_tvar, path_tvar):
     
     master_of_master.withdraw()
     master.withdraw()
+    
     project = Project(model_name, path)
-    WorkWindow(master_of_master, project)
+    ServiceLocator.get('rman').set_curr_project(project)
+
+    WorkWindow(master_of_master, project.project_name)
 
 
 

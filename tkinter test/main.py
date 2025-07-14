@@ -16,26 +16,11 @@ class ZoomDragCanvas(tk.Canvas):
         # Bindings
         self.bind("<ButtonPress-1>", self.select_item_or_start_drag)
         self.bind("<B1-Motion>", self.drag_selected_or_canvas)
-        self.bind("<MouseWheel>", self.zoom_windows)
+        # self.bind("<MouseWheel>", self.zoom_windows)
         self.bind("<Button-4>", self.zoom_linux)
         self.bind("<Button-5>", self.zoom_linux)
         self.bind("<Button-2>", self.reset_view)
 
-        self.populate_canvas()
-
-    def populate_canvas(self):
-        """Add some demo content to the canvas with draggable items."""
-        for i in range(5):
-            x0 = 100 + i * 120
-            y0 = 100 + i * 60
-            x1 = x0 + 100
-            y1 = y0 + 50
-            group_id = f"group_{i}"
-
-            self.create_rectangle(x0, y0, x1, y1, fill="lightblue", outline="black", width=2,
-                                  tags=("movable", group_id))
-            self.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=f"Box {i+1}", font=("Arial", 12, "bold"),
-                             tags=("movable", group_id))
             
     def add_box(self):
         x0, y0 = 300, 300
@@ -85,9 +70,10 @@ class ZoomDragCanvas(tk.Canvas):
         self._drag_data["x"] = event.x
         self._drag_data["y"] = event.y
 
-    def zoom_windows(self, event):
-        factor = 1.1 if event.delta > 0 else 0.9
-        self.apply_zoom(factor, event.x, event.y)
+    # def zoom_windows(self, event):
+    #     factor = 1.1 if event.delta > 0 else 0.9
+    #     self.apply_zoom(factor, event.x, event.y)
+
 
     def zoom_linux(self, event):
         factor = 1.1 if event.num == 4 else 0.9
@@ -106,7 +92,6 @@ class ZoomDragCanvas(tk.Canvas):
         self.offset_x = 0
         self.offset_y = 0
         self.delete("all")
-        self.populate_canvas()
 
 
 # Main App Window

@@ -5,11 +5,11 @@ from widgets.ModulesBar import ModulesBar
 from widgets.MenuBar import MenuBar
 
 class WorkWindow:
-    def __init__(self, master, project):
+    def __init__(self, master, title):
         
-        self.project = project
+        # self.project = project## should be accessed via resource manager
         self.window = tk.Toplevel(master)
-        self.window.title(f"{self.project.project_name}")
+        self.window.title(f"{title}")
         self.window.geometry("1920x1080")
         
         #have to create it first since its dims are not some "customizable" thingy

@@ -3,7 +3,9 @@ import os
 from models.ModuleData import ModuleData
 
 class ResourcesManager:
-    project = None
+    # project = None
+    def set_curr_project(self, project):
+        self.project = project
     def __init__(self):
         # self.modules = {'Conv2D': ModuleData("Conv2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/Conv2D.png"),
         #                 'MaxPool2D':ModuleData("MaxPooling2D", "/home/mahmoud-sayed/Desktop/Code/Python/NN Assembly Studio/src/resources/modules_images/MaxPooling2D.png"),
