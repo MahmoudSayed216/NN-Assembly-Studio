@@ -1,7 +1,7 @@
 from windows.CreateProjectWindow import CreateProjectWindow
-
+from ServiceLocator import ServiceLocator
 def create_project(root):
-    CreateProjectWindow(root)
+    ServiceLocator.get('wman').get_window_instance('CreateProjectWindow', root)
 
 def load_project():
     print("hello from load project")

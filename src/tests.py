@@ -1,4 +1,3 @@
-import tkinter as tk
+c = {'a':1, 'b': None, "somearg": "someval"}
 
-root = tk.Tk()
-print(tk.image_types())
+print(*c)
