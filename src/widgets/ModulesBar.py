@@ -4,6 +4,7 @@ import customtkinter
 from resources.fonts import *
 from resources.colors import *
 
+##TODO: IT HAS A TAB FOR FUNDAMENTAL ELEMENTS LIKE CONV AND MLP, AND ANOTHER TAB FOR MODULES
 
 class ModulesBar(tk.Frame):
 

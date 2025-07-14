@@ -3,7 +3,6 @@ import customtkinter
 from widgets.ModuleContainer import ModuleContainer
 from resources.colors import *
 
-
 class ScrollableFrame:
 
 	def __init__(self, master, items, width, height):
