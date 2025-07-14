@@ -1,9 +1,7 @@
 from tkinter import filedialog as fd
 from tkinter import messagebox
 import tkinter as tk
-
 from models.Project import Project
-from windows.WorkWindow import WorkWindow
 from ServiceLocator import ServiceLocator
 
 def create_project(master_of_master, master, model_name_tvar, path_tvar):
@@ -21,7 +19,6 @@ def create_project(master_of_master, master, model_name_tvar, path_tvar):
     project = Project(model_name, path)
     ServiceLocator.get('rman').set_curr_project(project)
     ServiceLocator.get('wman').get_window_instance('WorkWindow', master_of_master, project.project_name)
-    # WorkWindow()
 
 
 

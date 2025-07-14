@@ -1,6 +1,8 @@
 from configs import *  ##TODO: BASE_MODULES_PATH  SHOULD BE STORED IN SETTINGS.txt NOT IN CONFIGS
 import os
 from models.ModuleData import ModuleData
+import ast
+import uuid
 
 class ResourcesManager:
     # project = None
@@ -15,11 +17,18 @@ class ResourcesManager:
     
     def _load_module(self, module_full_path):
         with open(module_full_path) as file:
+
+            
+            # rgb2hex = lambda rgb: '#%02x%02x%02x' % rgb
+
             module_name = file.readline().split(':')[1].strip('\n')
             image_path = file.readline().split(':')[1].strip('\n')
             built_in = bool(file.readline().split(':')[1].strip('\n'))
+            fill = file.readline().split(':')[1].strip('\n')
+            outline = file.readline().split(':')[1].strip('\n')
+            print("outline: ", outline)
 
-            module = ModuleData(module_name, image_path, None, built_in)
+            module = ModuleData(module_name, image_path, uuid.uuid4().hex, None, built_in, fill, outline)
 
         return module
     
@@ -36,11 +45,13 @@ class ResourcesManager:
         ## TODO: THIS INCLUDES LOADING THE PROJECT ITSELF, AND LOADING ALL RELEVANT MODULES IF NOT ALREADY LOADED
         pass
 
-    def _save_module(self, module, save_path):    
+    def _save_module(self, module: ModuleData, save_path):    
         with open(save_path, "w") as file:
             file.write(f"MN:{module.module_name}\n")
             file.write(f"IP:{module.img_path}\n")
             file.write(f"BI:{module.builtin}\n")
+            file.write(f"FILL:{module.fill_color}\n")
+            file.write(f"OUTLINE:{module.outline_color}\n")
             #TODO: WRITE THE BLUEPRINT WHEN YOU IMPLEMENT IT
             #TODO: file names can start with either B or N [e.g.] to tell wether it's built in or not, and if not, then we don't need to load it on start?? 
 

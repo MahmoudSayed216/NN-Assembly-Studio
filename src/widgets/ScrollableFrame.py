@@ -19,6 +19,7 @@ class ScrollableFrame:
 
 	def list_items(self):
 		for item in self.items:
+			print(item.module_name)
 			ref1 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
 			self.module_containers_refs.append(ref1)
 			self.pack_infos.append(ref1.frame.pack_info())
