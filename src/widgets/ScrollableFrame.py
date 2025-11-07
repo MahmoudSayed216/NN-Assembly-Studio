@@ -23,13 +23,13 @@ class ScrollableFrame:
 			self.module_containers_refs.append(ref1)
 			self.pack_infos.append(ref1.frame.pack_info())
 					
-			ref2 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
-			self.module_containers_refs.append(ref2)
-			self.pack_infos.append(ref2.frame.pack_info())
+			# ref2 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
+			# self.module_containers_refs.append(ref2)
+			# self.pack_infos.append(ref2.frame.pack_info())
 
-			ref3 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
-			self.module_containers_refs.append(ref3)
-			self.pack_infos.append(ref3.frame.pack_info())
+			# ref3 = ModuleContainer(self.scrollable_frame, bg=WHITE, width=180, height=180, module_data=item)
+			# self.module_containers_refs.append(ref3)
+			# self.pack_infos.append(ref3.frame.pack_info())
 
 
 	def _on_mouse_wheel(self, event):

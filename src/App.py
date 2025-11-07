@@ -11,6 +11,7 @@ class NNAssemblyStudio:
         windows_man = WindowsManager()
         resources_man = ResourcesManager()
         settings_man = SettingsManager()
+        
         ServiceLocator.register('wman', windows_man)
         ServiceLocator.register('rman', resources_man)
         ServiceLocator.register('sman', settings_man)    

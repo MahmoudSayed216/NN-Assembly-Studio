@@ -26,4 +26,4 @@ def browse(parent, path_tbox: tk.Entry):
     save_path = fd.askopenfilename(parent=parent)
     path_tbox.delete(0, tk.END)
     path_tbox.insert(0, save_path)
-    pass
+    

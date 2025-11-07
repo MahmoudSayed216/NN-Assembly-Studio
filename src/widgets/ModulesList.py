@@ -1,7 +1,6 @@
 import tkinter as tk
 from resources.colors import *
 from widgets.ScrollableFrame import ScrollableFrame
-from models.ModuleData import ModuleData
 import handlers.ModuleListHandlers as ModulesListHandlers
 
 
@@ -15,7 +14,6 @@ class ModulesList(tk.Frame):
         
 
         self.module_containers_refs = []
-
 
         models = ModulesListHandlers.get_all_built_in_modules()
 
